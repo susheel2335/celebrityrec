@@ -934,13 +934,13 @@ body.active-preloader-ovh {
 }
 
 .banner-style-four {
-  padding-top: 240px;
-  padding-bottom: 224px;
+  padding-top: 230px;
+  padding-bottom:110px;
   overflow: hidden;
   background: #1C2135 url(../img/banner-bg-4-1.png) left top no-repeat;
 }
 .banner-style-four .banner-content {
-  padding-top: 130px;
+   
 }
 .banner-style-four .banner-content span {
   display: inline-block;
