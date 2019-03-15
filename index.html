@@ -454,13 +454,13 @@
                         })
                                 .success(function (res) {
                                     //$scope.message = res.face_found_in_image;
-				     $scope.message = res;
-
+				     $scope.message = res.data;
+				    console.log(res.object + "a");
                                     console.log($scope.message + "a");
                                 })
                                 .error(function (res) {
                                     //$scope.message = res.face_found_in_image;
-				     $scope.message = res;
+				     $scope.message = res.data;
 	
                                     console.log($scope.message + "b");
                                 });
