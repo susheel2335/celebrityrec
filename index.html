@@ -214,6 +214,8 @@
                 <div class="dropzonemsg">
                     <h>Object Found : {{message}}</h>
                 </div>
+			   <img style='display:block; width:100px;height:100px;' id='base64image'                 
+       src='{{img}}<!-- base64 data -->' />
 			</div>
             </div>
         </div>
@@ -457,13 +459,14 @@
                                 .success(function (res) {
                                     //$scope.message = res.face_found_in_image;
 				     $scope.message = res.object;
+				$scope.image = res.img;
 				    console.log(res.object + "a");
                                     console.log($scope.message + "a");
                                 })
                                 .error(function (res) {
                                     //$scope.message = res.face_found_in_image;
 				     $scope.message = res.object;
-	
+	$scope.image = res.img;
                                     console.log($scope.message + "b");
                                 });
                     }
