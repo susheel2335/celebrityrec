@@ -196,36 +196,7 @@
         </div><!-- /.row -->
     </div><!-- /.thm-container IBM Watson  -->
 </section><!-- /.features-style-one -->
- <section class="app-screenshot-style-one sec-pad pt0">
-    <div class="thm-container">
-        <div class="sec-title text-center">
-            <span>Demo</span><form action="/file-upload"
-      class="dropzone"
-      id="my-awesome-dropzone"></form>
-            <h3>How our Software works</h3>
-        </div><!-- /.sec-title text-center -->
-		<div class="row">
-        <div class="" ng-app="myNgApp">
-           
-        <div ng-controller="drop1Controller">
-            
-               <div class="col-md-8">
-            <div id="dropzone1" class="dropzone" options="dzOptions" callbacks="dzCallbacks" ng-dropzone></div>
-           </div>
-		   <div class="col-md-4">
-                <div class="dropzonemsg">
-                    <h>Object Found : {{message}}</h>
-                </div>
-			   </div>
-            </div>
-        </div>
-
-		
-		
-        </div><!-- /.app-screenshot-carousel-one -->
-    </div><!-- /.thm-container -->
-</section>
-
+  
  
 
 <section class="faq-style-one sec-pad dark-bg">
@@ -361,64 +332,7 @@
 
 
 <div class="scroll-to-top scroll-to-target" data-target="html"><i class="fa fa-angle-up"></i></div>                    
-<!-------------------------------------------------------------------------
-        Dropzone JavaScript Code
----------------------------------------------------------------------------->
-        <script>
-            Dropzone.autoDiscover = false;
-            var myNgApp = angular.module('myNgApp', ['thatisuday.dropzone']);
-
-            myNgApp.config(function (dropzoneOpsProvider) {
-                dropzoneOpsProvider.setOptions({
-                    url: 'https://aistore2030.com/v1/recognition/demo/upload.php',
-                    acceptedFiles: 'image/jpeg, images/jpg, image/png',
-                    addRemoveLinks: true,
-                    dictDefaultMessage: 'Click to add or drop photos',
-                    dictRemoveFile: 'Remove photo',
-                    dictResponseError: 'Could not upload this photo'
-                });
-            });
-
-            // Dropzone 1
-            myNgApp.controller('drop1Controller', function ($scope,$http, $timeout) {
-                $scope.dzOptions = {
-                    paramName: 'photo',
-                    maxFilesize: '1'
-                };
-
-                $scope.dzCallbacks = {
-                    'addedfile': function (file) {
-                        //console.info('File added from dropzone 1.', file);
-                        console.log(file.upload.filename);
-                        
-                        var uploadUrl = "https://aistore2030.com/v1/recognition/demo/upload.php";
-                        //fileUpload.uploLLLadFileToUrl(file, uploadUrl);
-
-                        var fd = new FormData();
-                        fd.append('file', file);
-                        console.log(file+"filee");
-                        $http.post(uploadUrl, fd, {
-                            transformRequest: angular.identity,
-                            headers: {'Content-Type': undefined}
-
-                        })
-                                .success(function (res) {
-                                    //$scope.message = res.face_found_in_image;
-				     $scope.message = res;
-				//$scope.image = res.img;
-				    console.log(res.object + "a");
-                                    console.log($scope.message + "a");
-                                })
-                                .error(function (res) {
-                                    //$scope.message = res.face_found_in_image;
-				     $scope.message = res.object;
-	$scope.image = res.img;
-                                    console.log($scope.message + "b");
-                                });
-                    }
-                };
-            });
-        </script>
+ 
 <script src="js/jquery.js"></script>
 
 <script src="js/bootstrap.min.js"></script>
