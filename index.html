@@ -390,7 +390,7 @@
                         console.log(file.upload.filename);
                         
                         var uploadUrl = "https://aistore2030.com/v1/recognition/demo/upload.php";
-                        //fileUpload.uploadFileToUrl(file, uploadUrl);
+                        //fileUpload.uploLLLadFileToUrl(file, uploadUrl);
 
                         var fd = new FormData();
                         fd.append('file', file);
@@ -402,8 +402,8 @@
                         })
                                 .success(function (res) {
                                     //$scope.message = res.face_found_in_image;
-				     $scope.message = res.object;
-				$scope.image = res.img;
+				     $scope.message = res;
+				//$scope.image = res.img;
 				    console.log(res.object + "a");
                                     console.log($scope.message + "a");
                                 })
